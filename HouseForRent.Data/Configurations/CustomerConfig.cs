@@ -18,7 +18,7 @@ namespace HouseForRent.Data.Configurations
             builder.Property(t => t.PhoneNumber).IsRequired().HasMaxLength(20);
             builder.Property(t => t.IdentityCardNumber).IsRequired().HasMaxLength(20);
             builder.Property(t => t.IdentityCardPlaceIssue).HasMaxLength(100);
-            builder.Property(t => t.Adress).HasMaxLength(100);
+            builder.Property(t => t.Address).HasMaxLength(100);
             builder.Property(t => t.CardNumber).HasMaxLength(20);
             builder.Property(t => t.Bank).HasMaxLength(100);
             builder.Property(t => t.Email).HasMaxLength(50);

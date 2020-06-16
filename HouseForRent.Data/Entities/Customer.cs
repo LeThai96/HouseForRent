@@ -17,7 +17,7 @@ namespace HouseForRent.Data.Entities
         public string IdentityCardNumber { get; set; }
         public DateTime IdentityCardDateIssue { get; set; }
         public string IdentityCardPlaceIssue { get; set; }
-        public string Adress { get; set; }
+        public string Address { get; set; }
         public string CardNumber { get; set; }
         public string Bank { get; set; }
         public string ProfileImage { get; set; }
