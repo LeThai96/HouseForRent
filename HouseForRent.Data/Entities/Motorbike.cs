@@ -8,8 +8,8 @@ namespace HouseForRent.Data.Entities
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public string MotorType { get; set; }
+        public MotorType MotorType { get; set; }
         public string MotorNumber { get; set; }
-        public Guid CustomerId { get; set; }
+        public Customer Customer { get; set; }
     }
 }
