@@ -1,7 +1,9 @@
 ﻿using HouseForRent.Data.Entities;
+using HouseForRent.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace HouseForRent.Data.EF
@@ -10,6 +12,12 @@ namespace HouseForRent.Data.EF
     {
         public HouseForRentDbContext(DbContextOptions options) : base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.Seed();
         }
 
         public DbSet<Apartment> Apartments { get; set; }

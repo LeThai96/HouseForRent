@@ -9,5 +9,8 @@ namespace HouseForRent.Data.Entities
         public Guid Id { get; set; }
         public string BlockName { get; set; }
         public string Description { get; set; }
+
+        public List<Asset> Assets { get; set; }
+        public List<Apartment> Apartments { get; set; }
     }
 }
