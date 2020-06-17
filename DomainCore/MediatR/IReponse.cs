@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DomainCore.MediatR
+namespace HouseForRent.DomainCore.MediatR
 {
     public interface IResponse
     {

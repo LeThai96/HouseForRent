@@ -1,5 +1,5 @@
-﻿using DomainCore.Repository;
-using HouseForRent.Data.EF;
+﻿using HouseForRent.Data.EF;
+using HouseForRent.DomainCore.Repository;
 using System;
 using System.Collections;
 using System.Collections.Generic;

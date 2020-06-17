@@ -7,8 +7,8 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DomainCore.Repository
-{   
+namespace HouseForRent.DomainCore.Repository
+{
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         private readonly HouseForRentDbContext _context;
@@ -35,17 +35,11 @@ namespace DomainCore.Repository
             }
         }
 
-        public void Delete(List<T> entities)
+        public void DeleteRange(List<T> entities)
         {
             try
             {
-                foreach(var entity in entities)
-                {
-                    if (entity != null)
-                    {
-                        collection.Remove(entity);
-                    }
-                }
+                collection.RemoveRange(entities);
             }
             catch (Exception ex)
             {
@@ -53,9 +47,24 @@ namespace DomainCore.Repository
             }
         }
 
-        public T FindOne(Expression<Func<T, bool>> match)
+        public async Task<List<T>> FindAll()
         {
-            return collection.FirstOrDefault(match);
+            return await collection.ToListAsync();
+        }
+
+        public async Task<List<T>> FindByCondition(Expression<Func<T, bool>> match)
+        {
+            return await collection.Where(match).ToListAsync();
+        }
+
+        public async Task<T> FindByPK(dynamic key)
+        {
+            return await collection.FindAsync(key);
+        }
+
+        public async Task<T> FindOne(Expression<Func<T, bool>> match)
+        {
+            return await collection.FirstOrDefaultAsync(match);
         }
 
         public IQueryable<T> GetAll()
@@ -82,13 +91,7 @@ namespace DomainCore.Repository
         {
             try
             {
-                foreach (var entity in entities)
-                {
-                    if (entity != null)
-                    {
-                        collection.Add(entity);
-                    }
-                }
+                collection.AddRange(entities);
             }
             catch (Exception ex)
             {
@@ -98,12 +101,26 @@ namespace DomainCore.Repository
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                collection.Update(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
         }
 
         public void UpdateRange(List<T> entities)
         {
-            throw new NotImplementedException();
+            try
+            {
+                collection.UpdateRange(entities);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
         }
     }
 }

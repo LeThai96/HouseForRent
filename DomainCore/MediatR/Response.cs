@@ -1,9 +1,9 @@
-﻿using DomainCore.Common;
+﻿using HouseForRent.DomainCore.Common;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DomainCore.MediatR
+namespace HouseForRent.DomainCore.MediatR
 {
     public class Response : IResponse
     {

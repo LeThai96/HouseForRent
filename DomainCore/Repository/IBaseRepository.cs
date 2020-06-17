@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DomainCore.Repository
+namespace HouseForRent.DomainCore.Repository
 {
     public interface IBaseRepository<T>
     {
@@ -19,9 +19,15 @@ namespace DomainCore.Repository
 
         void Delete(T entity);
 
-        void Delete(List<T> entities);
+        void DeleteRange(List<T> entities);
 
-        T FindOne(Expression<Func<T, bool>> match);
+        Task<T> FindOne(Expression<Func<T, bool>> match);
+
+        Task<T> FindByPK(dynamic key);
+
+        Task<List<T>> FindByCondition(Expression<Func<T, bool>> match);
+
+        Task<List<T>> FindAll();
 
         IQueryable<T> GetAll();
     }
