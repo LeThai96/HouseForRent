@@ -4,14 +4,16 @@ using HouseForRent.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HouseForRent.Data.Migrations
 {
     [DbContext(typeof(HouseForRentDbContext))]
-    partial class HouseForRentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200617030427_IdentitySeeding")]
+    partial class IdentitySeeding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,7 +91,7 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9e4fbeb0-4a01-4a71-ad36-ce0844805123"),
+                            Id = new Guid("85724b2c-04f7-48a3-9bbb-6b776225b797"),
                             Description = "Base",
                             Type = "Base"
                         });
@@ -116,20 +118,20 @@ namespace HouseForRent.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppRoles");
+                    b.ToTable("Roles");
 
                     b.HasData(
                         new
                         {
                             Id = new Guid("9bf83243-05e6-4f30-a591-ab1e35e0bd91"),
-                            ConcurrencyStamp = "fec168e7-d45a-443e-9101-d374b9cd33a6",
+                            ConcurrencyStamp = "c21e65d4-cf1f-4cf0-a435-9d553b14012c",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
                             Id = new Guid("ec2d3359-98c7-4ce8-a1bf-33345e7e3424"),
-                            ConcurrencyStamp = "0b790c84-73fd-4fc9-9e20-136cce1f9ccd",
+                            ConcurrencyStamp = "c339e85c-c06e-42c5-ac64-d369e0a790a5",
                             Name = "manager",
                             NormalizedName = "manager"
                         });
@@ -189,20 +191,20 @@ namespace HouseForRent.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppUsers");
+                    b.ToTable("Users");
 
                     b.HasData(
                         new
                         {
                             Id = new Guid("023d8b3f-a56b-4a12-92e1-b066210cd854"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1391771e-53df-4ec6-93f1-685da06af5f1",
+                            ConcurrencyStamp = "44525910-dcde-4b19-9cec-e83c1a7dd0b9",
                             Email = "le.dinhthai00@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "le.dinhthai00@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAECUfjcd98d0EM28tW872NANQ7I3U+ogbnLboeMRFE8x8Zl3ac0lzq18NGQq86x6CFw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDOcJ9b3ScLPtrv3flG24IKdCO+lFGaGK7gf5TtPkEif4ccobyfr/tSz4y9iuD0dgQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -212,13 +214,13 @@ namespace HouseForRent.Data.Migrations
                         {
                             Id = new Guid("2a222ed2-fc1d-4cd2-96e1-cca3f08db5f6"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8a3cb912-c559-4244-87f4-c9785cf93707",
+                            ConcurrencyStamp = "28edeefe-22e4-43ca-a997-1f59750f5b36",
                             Email = "le.dinhthai00@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "le.dinhthai00@gmail.com",
                             NormalizedUserName = "manager",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHL/2/gL86cq75R1/nCyVD+sKjH9jsCxXBY3EiSAejWxcM9ob1AtHfXd2ySBTOJvWA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMU+xTAYOF7/m64OgKkXZQee79o1sCMfSYrl0fnhqnO+1HM9xlt1AgeX4IgvaQegVg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -336,7 +338,7 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d41c0206-b166-43d2-958e-5a6b4a784ff6"),
+                            Id = new Guid("a2f2c6f1-b555-4983-816e-945fa084d36d"),
                             Description = "Base",
                             Status = "Base"
                         });
@@ -363,7 +365,7 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8f8dcb75-405f-47ad-b112-1a02072e923b"),
+                            Id = new Guid("fe543ae3-f3e4-43df-9e2c-4e4b710a26c7"),
                             Description = "Base",
                             Type = "Base"
                         });
@@ -392,7 +394,7 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("fcffbbc7-5201-466a-a4d4-1c9ab81ec059"),
+                            Id = new Guid("619cc3f1-61d9-4f38-9cd9-5caed43de443"),
                             BlockName = "Base",
                             Description = "Base"
                         });
@@ -485,19 +487,19 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3a34a945-4566-4ca3-b7ff-01267c33b5f3"),
+                            Id = new Guid("28b3c45f-02cb-4582-b133-093e7fc7f75a"),
                             Description = "3 tháng",
                             Duration = "3 tháng"
                         },
                         new
                         {
-                            Id = new Guid("210a2d77-c03c-45be-b2d4-78756aea99d6"),
+                            Id = new Guid("283c7556-2527-447f-adcd-3c885e4c05d8"),
                             Description = "6 tháng",
                             Duration = "6 tháng"
                         },
                         new
                         {
-                            Id = new Guid("36a2910a-95f4-4c8f-bacc-b46f97c93cd0"),
+                            Id = new Guid("4a33e824-6e7a-4c19-8018-b42525d96951"),
                             Description = "1 năm",
                             Duration = "1 năm"
                         });
@@ -524,7 +526,7 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("cd181dae-936a-4992-a67a-46a72e40dbab"),
+                            Id = new Guid("4f7746cf-a49a-458a-8534-2f4db833a30b"),
                             Description = "Base",
                             Status = "Base"
                         });
@@ -551,7 +553,7 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("fc6299ad-a398-420d-ba51-f8fcafce43da"),
+                            Id = new Guid("e8293329-1179-4aa9-a67f-693f80df7de8"),
                             Description = "Base",
                             Type = "Base"
                         });
@@ -645,7 +647,7 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ae96808f-d98b-45d1-a60b-a7ad5a493fac"),
+                            Id = new Guid("5f354ab3-19b2-4e12-9d6e-effbecebcff3"),
                             Description = "Base",
                             Type = "Base"
                         });
@@ -687,7 +689,7 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9ff3fd6d-7aee-45b2-b495-915df9de6f49"),
+                            Id = new Guid("2e3a34da-b545-45c2-a9fb-112b445bb4c8"),
                             Description = "Base",
                             Type = "Base"
                         });
@@ -816,7 +818,7 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4e8f27c5-3835-4803-a43a-910244d42570"),
+                            Id = new Guid("27524900-e767-4d27-a2a8-db6908b8550c"),
                             Description = "Base",
                             Status = "Base"
                         });
@@ -867,7 +869,7 @@ namespace HouseForRent.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("71e0ef66-8240-4d92-a711-6af1730f358b"),
+                            Id = new Guid("bdeda95c-4b14-44c4-a79c-d1f47ef1d755"),
                             Description = "Base",
                             UnitName = "Base"
                         });
