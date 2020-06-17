@@ -11,39 +11,39 @@ namespace HouseForRent.Data.Extensions
         public static void Seed(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CustomerType>().HasData(
-                new CustomerType() { Type = "Base", Description = "Base" }
+                new CustomerType() { Id= Guid.NewGuid(), Type = "Base", Description = "Base" }
                 );
             modelBuilder.Entity<ApartmentType>().HasData(
-                new ApartmentType() { Type = "Base", Description = "Base" }
+                new ApartmentType() { Id = Guid.NewGuid(), Type = "Base", Description = "Base" }
                 );
             modelBuilder.Entity<AssetType>().HasData(
-                new AssetType() { Type = "Base", Description = "Base" }
+                new AssetType() { Id = Guid.NewGuid(), Type = "Base", Description = "Base" }
                 );
             modelBuilder.Entity<Unit>().HasData(
-                new Unit() { UnitName = "Base", Description = "Base" }
+                new Unit() { Id = Guid.NewGuid(), UnitName = "Base", Description = "Base" }
                 );
             modelBuilder.Entity<Block>().HasData(
-               new Block() { BlockName = "Base", Description = "Base" }
+               new Block() {Id= Guid.NewGuid(), BlockName = "Base", Description = "Base" }
                );
             modelBuilder.Entity<AssetRentStatus>().HasData(
-               new AssetRentStatus() { Status = "Base", Description = "Base" }
+               new AssetRentStatus() { Id = Guid.NewGuid(), Status = "Base", Description = "Base" }
                );
             modelBuilder.Entity<MotorType>().HasData(
-               new MotorType() { Type = "Base", Description = "Base" }
+               new MotorType() { Id = Guid.NewGuid(), Type = "Base", Description = "Base" }
                );
             modelBuilder.Entity<ContractType>().HasData(
-               new ContractType() { Type = "Base", Description = "Base" }
+               new ContractType() { Id = Guid.NewGuid(), Type = "Base", Description = "Base" }
                );
             modelBuilder.Entity<ContractDuration>().HasData(
-               new ContractDuration() { Duration = "3 tháng", Description = "3 tháng" },
-               new ContractDuration() { Duration = "6 tháng", Description = "6 tháng" },
-               new ContractDuration() { Duration = "1 năm", Description = "1 năm" }
+               new ContractDuration() { Id = Guid.NewGuid(), Duration = "3 tháng", Description = "3 tháng" },
+               new ContractDuration() { Id = Guid.NewGuid(), Duration = "6 tháng", Description = "6 tháng" },
+               new ContractDuration() { Id = Guid.NewGuid(), Duration = "1 năm", Description = "1 năm" }
                );
             modelBuilder.Entity<ContractStatus>().HasData(
-               new ContractStatus() { Status = "Base", Description = "Base" }
+               new ContractStatus() { Id = Guid.NewGuid(), Status = "Base", Description = "Base" }
                );
             modelBuilder.Entity<RepairRequestStatus>().HasData(
-               new RepairRequestStatus() { Status = "Base", Description = "Base" }
+               new RepairRequestStatus() { Id = Guid.NewGuid(), Status = "Base", Description = "Base" }
                );
         }
     }

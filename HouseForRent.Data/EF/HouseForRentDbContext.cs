@@ -1,4 +1,5 @@
 ﻿using HouseForRent.Data.Entities;
+using HouseForRent.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace HouseForRent.Data.EF
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.Seed();
         }
 
         public DbSet<Apartment> Apartments { get; set; }
