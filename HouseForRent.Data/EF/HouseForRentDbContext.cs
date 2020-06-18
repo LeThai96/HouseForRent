@@ -1,5 +1,7 @@
 ﻿using HouseForRent.Data.Entities;
 using HouseForRent.Data.Extensions;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Text;
 
 namespace HouseForRent.Data.EF
 {
-    public class HouseForRentDbContext : DbContext
+    public class HouseForRentDbContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
         public HouseForRentDbContext(DbContextOptions options) : base(options)
         {
@@ -18,6 +20,12 @@ namespace HouseForRent.Data.EF
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             modelBuilder.Seed();
+
+            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaim");
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRole").HasKey(x => new { x.RoleId, x.UserId});
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogin").HasKey(x => x.UserId);
+            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaim");
+            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserToken").HasKey(x => x.UserId);
         }
 
         public DbSet<Apartment> Apartments { get; set; }
