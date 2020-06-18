@@ -4,4 +4,11 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HouseForRent.Application\HouseForRent.Application.csproj" />
+    <ProjectReference Include="..\HouseForRent.Data\HouseForRent.Data.csproj" />
+    <ProjectReference Include="..\HouseForRent.DomainCore\HouseForRent.DomainCore.csproj" />
+    <ProjectReference Include="..\HouseForRent.DomainEntites\HouseForRent.DomainEntities.csproj" />
+  </ItemGroup>
+
 </Project>
