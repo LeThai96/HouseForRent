@@ -5,9 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AparmentTypes\CommandHandlers\" />
-    <Folder Include="AparmentTypes\Commands\" />
-    <Folder Include="AparmentTypes\DTOs\" />
     <Folder Include="ContractStatuses\CommandHandlers\" />
     <Folder Include="ContractStatuses\Commands\" />
     <Folder Include="ContractStatuses\DTOs\" />
@@ -80,8 +77,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainCore\HouseForRent.DomainCore.csproj" />
     <ProjectReference Include="..\HouseForRent.Data\HouseForRent.Data.csproj" />
+    <ProjectReference Include="..\HouseForRent.DomainCore\HouseForRent.DomainCore.csproj" />
   </ItemGroup>
 
 </Project>

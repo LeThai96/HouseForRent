@@ -16,25 +16,22 @@ namespace HouseForRent.DomainEntities.AparmentTypes.CommandHandlers
     public class CreateUpdateApartmentTypeCommandHandle : IRequestHandler<CreateUpdateApartmentTypeCommand, Response>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBaseRepository<ApartmentType> _apartmentTypeRepo;
 
         public CreateUpdateApartmentTypeCommandHandle(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _apartmentTypeRepo = unitOfWork.Repository<ApartmentType>();
         }
 
         public async Task<Response> Handle(CreateUpdateApartmentTypeCommand request, CancellationToken cancellationToken)
         {
             try
             {
-                var tsk_dbApartmentType = _apartmentTypeRepo.FindByPK(request.Id);
-                var dbApartmentType = tsk_dbApartmentType.AsyncState as ApartmentType;
+                var dbApartmentType = await _unitOfWork.Repository<ApartmentType>().FindByPK(request.Id);
                 if (dbApartmentType != null)
                 {
                     dbApartmentType.Type = request.Type;
                     dbApartmentType.Description = request.Description;
-                    _apartmentTypeRepo.Update(dbApartmentType);
+                    _unitOfWork.Repository<ApartmentType>().Update(dbApartmentType);
                 }
                 else
                 {
@@ -43,7 +40,7 @@ namespace HouseForRent.DomainEntities.AparmentTypes.CommandHandlers
                         Type = request.Type,
                         Description = request.Description
                     };
-                    _apartmentTypeRepo.Insert(apartmentType);
+                    _unitOfWork.Repository<ApartmentType>().Insert(apartmentType);
                 }
 
                 await _unitOfWork.SaveChangeAsync();

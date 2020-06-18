@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseForRent.Data", "HouseF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseForRent.Application", "HouseForRent.Application\HouseForRent.Application.csproj", "{2FE058F9-3991-4106-9F99-B09A0BEEC4A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseForRent.DomainCore", "DomainCore\HouseForRent.DomainCore.csproj", "{9C8B02D0-43B2-4BE4-A7EE-3696D4654225}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseForRent.DomainEntities", "HouseForRent.DomainEntites\HouseForRent.DomainEntities.csproj", "{0FF2C20B-C0AF-4D93-A394-8EA514B7B441}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseForRent.DomainEntities", "HouseForRent.DomainEntites\HouseForRent.DomainEntities.csproj", "{0FF2C20B-C0AF-4D93-A394-8EA514B7B441}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseForRent.DomainCore", "HouseForRent.DomainCore\HouseForRent.DomainCore.csproj", "{5FC95DA7-EB6B-4EA8-99C6-1D470B308832}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseForRent.IoC", "HouseForRent.IoC\HouseForRent.IoC.csproj", "{7B004D8A-A544-47C3-87EA-C33F4D968D54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +27,18 @@ Global
 		{2FE058F9-3991-4106-9F99-B09A0BEEC4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FE058F9-3991-4106-9F99-B09A0BEEC4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FE058F9-3991-4106-9F99-B09A0BEEC4A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C8B02D0-43B2-4BE4-A7EE-3696D4654225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C8B02D0-43B2-4BE4-A7EE-3696D4654225}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C8B02D0-43B2-4BE4-A7EE-3696D4654225}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C8B02D0-43B2-4BE4-A7EE-3696D4654225}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0FF2C20B-C0AF-4D93-A394-8EA514B7B441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FF2C20B-C0AF-4D93-A394-8EA514B7B441}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF2C20B-C0AF-4D93-A394-8EA514B7B441}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FF2C20B-C0AF-4D93-A394-8EA514B7B441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FC95DA7-EB6B-4EA8-99C6-1D470B308832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FC95DA7-EB6B-4EA8-99C6-1D470B308832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FC95DA7-EB6B-4EA8-99C6-1D470B308832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FC95DA7-EB6B-4EA8-99C6-1D470B308832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B004D8A-A544-47C3-87EA-C33F4D968D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B004D8A-A544-47C3-87EA-C33F4D968D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B004D8A-A544-47C3-87EA-C33F4D968D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B004D8A-A544-47C3-87EA-C33F4D968D54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
