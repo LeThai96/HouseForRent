@@ -10,9 +10,10 @@ namespace HouseForRent.Application.Services.ApartmentType
 {
     public interface IApartmentTypeService
     {
-        Task<Response> CreateUpdateApartmentType(CreateUpdateApartmentTypeViewModel createUpdateApartmentTypeViewModel);
-        Task<Response> DeleteApartmentType(DeleteApartmentTypeViewModel deleteApartmentTypeViewModel);
-        Task<List<ApartmentTypeDTO>> GetAllApartmentType();
-        Task<Response> GetApartmentType(GetApartmentTypeViewModel getApartmentTypeViewModel);
+        Task<Response> CreateApartmentType(CreateApartmentTypeViewModel model);
+        Task<Response> UpdateApartmentType(UpdateApartmentTypeViewModel model);
+        Task<Response> DeleteApartmentType(DeleteApartmentTypeViewModel model);
+        Task<Response> GetAllApartmentType(GetAllApartmentTypesViewModel model);
+        Task<Response> GetApartmentType(GetApartmentTypeViewModel model);
     }
 }

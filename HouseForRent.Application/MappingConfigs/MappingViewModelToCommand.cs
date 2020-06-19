@@ -12,7 +12,9 @@ namespace HouseForRent.Application.MappingConfigs
         public MappingViewModelToCommand()
         {
             CreateMap<GetApartmentTypeViewModel, GetApartmentTypeCommand>();
-            CreateMap<CreateUpdateApartmentTypeViewModel, CreateUpdateApartmentTypeCommand>();
+            CreateMap<GetAllApartmentTypesViewModel, GetAllApartmentTypeCommand>();
+            CreateMap<CreateApartmentTypeViewModel, CreateApartmentTypeCommand>();
+            CreateMap<UpdateApartmentTypeViewModel, UpdateApartmentTypeCommand>();
             CreateMap<DeleteApartmentTypeViewModel, DeleteApartmentTypeCommand>();
         }
     }

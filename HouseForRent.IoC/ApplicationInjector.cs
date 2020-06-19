@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HouseForRent.Application.MappingConfigs;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,7 @@ namespace HouseForRent.IoC
         public static void Register(IServiceCollection services)
         {
             //Application
-            var mappingConfig = AutoMapping.RegisterMappings();
-            IMapper mapper = mappingConfig.CreateMapper();
-            services.AddSingleton(mapper);
-            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
-
+            
             // Domain - Commands
             var serviceDependencies = Assembly.Load("HouseForRent.Application").GetTypes().Where(x => x.IsClass && x.Name.EndsWith("Service"));
             foreach (var serviceDependency in serviceDependencies)

@@ -32,15 +32,6 @@
     <Folder Include="WaterIndexManagements\CommandHandlers\" />
     <Folder Include="WaterIndexManagements\Commands\" />
     <Folder Include="WaterIndexManagements\DTOs\" />
-    <Folder Include="AssetTypes\CommandHandlers\" />
-    <Folder Include="AssetTypes\Commands\" />
-    <Folder Include="AssetTypes\DTOs\" />
-    <Folder Include="Units\CommandHandlers\" />
-    <Folder Include="Units\Commands\" />
-    <Folder Include="Units\DTOs\" />
-    <Folder Include="Blocks\CommandHandlers\" />
-    <Folder Include="Blocks\Commands\" />
-    <Folder Include="Blocks\DTOs\" />
     <Folder Include="AssetRents\CommandHandlers\" />
     <Folder Include="AssetRents\Commands\" />
     <Folder Include="AssetRents\DTOs\" />
@@ -53,15 +44,9 @@
     <Folder Include="Motorbikes\CommandHandlers\" />
     <Folder Include="Motorbikes\Commands\" />
     <Folder Include="Motorbikes\DTOs\" />
-    <Folder Include="MotorTypes\CommandHandlers\" />
-    <Folder Include="MotorTypes\Commands\" />
-    <Folder Include="MotorTypes\DTOs\" />
     <Folder Include="PowerIndexManagements\CommandHandlers\" />
     <Folder Include="PowerIndexManagements\Commands\" />
     <Folder Include="PowerIndexManagements\DTOs\" />
-    <Folder Include="ContractTypes\CommandHandlers\" />
-    <Folder Include="ContractTypes\Commands\" />
-    <Folder Include="ContractTypes\DTOs\" />
     <Folder Include="Assets\CommandHandlers\" />
     <Folder Include="Assets\Commands\" />
     <Folder Include="Assets\DTOs\" />
@@ -71,9 +56,10 @@
     <Folder Include="Customers\CommandHandlers\" />
     <Folder Include="Customers\Commands\" />
     <Folder Include="Customers\DTOs\" />
-    <Folder Include="CustomerTypes\CommandHandlers\" />
-    <Folder Include="CustomerTypes\Commands\" />
-    <Folder Include="CustomerTypes\DTOs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -22,9 +22,9 @@ namespace HouseForRent.Application.Services.ApartmentType
             _mediator = mediator;
         }
 
-        public async Task<Response> CreateUpdateApartmentType(CreateUpdateApartmentTypeViewModel createUpdateApartmentTypeViewModel)
+        public async Task<Response> CreateApartmentType(CreateApartmentTypeViewModel createUpdateApartmentTypeViewModel)
         {
-            var createUpdateApartmentTypeCommand = _mapper.Map<CreateUpdateApartmentTypeCommand>(createUpdateApartmentTypeViewModel);
+            var createUpdateApartmentTypeCommand = _mapper.Map<CreateApartmentTypeCommand>(createUpdateApartmentTypeViewModel);
             return await _mediator.Send(createUpdateApartmentTypeCommand);
         }
 
@@ -34,9 +34,9 @@ namespace HouseForRent.Application.Services.ApartmentType
             return await _mediator.Send(deleteApartmentTypeCommand);
         }
 
-        public async Task<List<ApartmentTypeDTO>> GetAllApartmentType()
+        public async Task<Response> GetAllApartmentType(GetAllApartmentTypesViewModel model)
         {
-            var getAllApartmentTypeCommand = _mapper.Map<GetAllApartmentTypeCommand>(null);
+            var getAllApartmentTypeCommand = _mapper.Map<GetAllApartmentTypeCommand>(model);
             return await _mediator.Send(getAllApartmentTypeCommand);
         }
 
@@ -44,6 +44,12 @@ namespace HouseForRent.Application.Services.ApartmentType
         {
             var getApartmentTypeCommand = _mapper.Map<GetApartmentTypeCommand>(getApartmentTypeViewModel);
             return await _mediator.Send(getApartmentTypeCommand);
+        }
+
+        public async Task<Response> UpdateApartmentType(UpdateApartmentTypeViewModel createUpdateApartmentTypeViewModel)
+        {
+            var createUpdateApartmentTypeCommand = _mapper.Map<UpdateApartmentTypeCommand>(createUpdateApartmentTypeViewModel);
+            return await _mediator.Send(createUpdateApartmentTypeCommand);
         }
     }
 }

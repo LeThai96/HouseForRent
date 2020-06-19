@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using HouseForRent.Application.MappingConfigs;
 using HouseForRent.Data.EF;
 using HouseForRent.IoC;
 using MediatR;
@@ -38,7 +39,7 @@ namespace HouseForRent.BackEndAPI
             services.AddMediatR(typeof(Startup));
 
             // ===== Add AutoMapper =====
-            //services.AddAutoMapper();
+            services.AddAutoMapper(typeof(MappingViewModelToCommand), typeof(MappingEntityToDTO));
 
             //====== Add Scoped ======
             RegisterServices(services);
