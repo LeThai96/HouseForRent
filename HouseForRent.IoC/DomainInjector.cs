@@ -12,7 +12,7 @@ namespace HouseForRent.IoC
         public static void Register(IServiceCollection services)
         {
             // Domain - Commands
-            var handlers = Assembly.Load("HouseForRent.DomainEntity").GetTypes().Where(x => x.IsClass && x.Name.EndsWith("CommandHandler"));
+            var handlers = Assembly.Load("HouseForRent.DomainEntities").GetTypes().Where(x => x.IsClass && x.Name.EndsWith("CommandHandler"));
             foreach (var handle in handlers)
             {
                 var type = handle.GetInterfaces().FirstOrDefault(x => x.Name.StartsWith("IRequest"));
