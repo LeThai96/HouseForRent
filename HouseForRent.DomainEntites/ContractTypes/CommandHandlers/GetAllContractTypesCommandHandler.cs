@@ -1,4 +1,5 @@
-﻿using DomainCore.UnitOfWork;
+﻿using AutoMapper;
+using DomainCore.UnitOfWork;
 using HouseForRent.Data.Common;
 using HouseForRent.Data.Entities;
 using HouseForRent.DomainCore.MediatR;
@@ -17,10 +18,12 @@ namespace HouseForRent.DomainEntities.ContractTypes.CommandHandlers
     public class GetAllContractTypesCommandHandler : IRequestHandler<GetAllContractTypesCommand, Response>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public GetAllContractTypesCommandHandler(IUnitOfWork unitOfWork)
+        public GetAllContractTypesCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         public async Task<Response> Handle(GetAllContractTypesCommand request, CancellationToken cancellationToken)
@@ -33,11 +36,7 @@ namespace HouseForRent.DomainEntities.ContractTypes.CommandHandlers
                 {
                     Code = ErrorCodeMessage.Success.Key,
                     Message = ErrorCodeMessage.Success.Value,
-                    Data = dbContractTypes.Select(x => new ContractTypeDTO()
-                    {
-                        Type = x.Type,
-                        Description = x.Description
-                    }).ToList()
+                    Data = _mapper.Map<ContractTypeDTO>(dbContractTypes)
                 });
             }
             catch (Exception ex)

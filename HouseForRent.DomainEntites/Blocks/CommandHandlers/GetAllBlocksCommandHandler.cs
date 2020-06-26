@@ -1,4 +1,5 @@
-﻿using DomainCore.UnitOfWork;
+﻿using AutoMapper;
+using DomainCore.UnitOfWork;
 using HouseForRent.Data.Common;
 using HouseForRent.Data.Entities;
 using HouseForRent.DomainCore.MediatR;
@@ -17,10 +18,12 @@ namespace HouseForRent.DomainEntities.Blocks.CommandHandlers
     public class GetAllBlocksCommandHandler : IRequestHandler<GetAllBlocksCommand, Response>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public GetAllBlocksCommandHandler(IUnitOfWork unitOfWork)
+        public GetAllBlocksCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         public async Task<Response> Handle(GetAllBlocksCommand request, CancellationToken cancellationToken)
@@ -33,11 +36,7 @@ namespace HouseForRent.DomainEntities.Blocks.CommandHandlers
                 {
                     Code = ErrorCodeMessage.Success.Key,
                     Message = ErrorCodeMessage.Success.Value,
-                    Data = dbBlocks.Select(x => new BlockDTO()
-                    {
-                        BlockName = x.BlockName,
-                        Description = x.Description
-                    }).ToList()
+                    Data = _mapper.Map<BlockDTO>(dbBlocks)
                 });
             }
             catch (Exception ex)

@@ -1,4 +1,5 @@
-﻿using DomainCore.UnitOfWork;
+﻿using AutoMapper;
+using DomainCore.UnitOfWork;
 using HouseForRent.Data.Common;
 using HouseForRent.Data.Entities;
 using HouseForRent.DomainCore.MediatR;
@@ -17,10 +18,12 @@ namespace HouseForRent.DomainEntities.MotorTypes.CommandHandlers
     public class GetAllMotorTypesCommandHandler : IRequestHandler<GetAllMotorTypesCommand, Response>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public GetAllMotorTypesCommandHandler(IUnitOfWork unitOfWork)
+        public GetAllMotorTypesCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         public async Task<Response> Handle(GetAllMotorTypesCommand request, CancellationToken cancellationToken)
@@ -33,11 +36,7 @@ namespace HouseForRent.DomainEntities.MotorTypes.CommandHandlers
                 {
                     Code = ErrorCodeMessage.Success.Key,
                     Message = ErrorCodeMessage.Success.Value,
-                    Data = dbMotorTypes.Select(x => new MotorTypeDTO()
-                    {
-                        Type = x.Type,
-                        Description = x.Description
-                    }).ToList()
+                    Data = _mapper.Map<MotorTypeDTO>(dbMotorTypes)
                 });
             }
             catch (Exception ex)

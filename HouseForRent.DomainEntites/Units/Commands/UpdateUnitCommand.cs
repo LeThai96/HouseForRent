@@ -8,7 +8,7 @@ namespace HouseForRent.DomainEntities.Units.Commands
 {
     public class UpdateUnitCommand : IRequest<Response>
     {
-        public Guid id { get; set; }
+        public Guid Id { get; set; }
         public string UnitName { get; set; }
         public string Description { get; set; }
     }

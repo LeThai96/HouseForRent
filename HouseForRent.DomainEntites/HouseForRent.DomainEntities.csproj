@@ -15,8 +15,6 @@
     <Folder Include="RepairRequestsStatuses\Commands\" />
     <Folder Include="RepairRequestsStatuses\DTOs\" />
     <Folder Include="ContractDurations\CommandHandlers\" />
-    <Folder Include="ContractDurations\Commands\" />
-    <Folder Include="ContractDurations\DTOs\" />
     <Folder Include="PowerPrice\CommandHandlers\" />
     <Folder Include="PowerPrice\Commands\" />
     <Folder Include="PowerPrice\DTOs\" />
