@@ -5,9 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ContractStatuses\CommandHandlers\" />
-    <Folder Include="ContractStatuses\Commands\" />
-    <Folder Include="ContractStatuses\DTOs\" />
     <Folder Include="RepairRequests\CommandHandlers\" />
     <Folder Include="RepairRequests\Commands\" />
     <Folder Include="RepairRequests\DTOs\" />
@@ -33,9 +30,6 @@
     <Folder Include="AssetRents\CommandHandlers\" />
     <Folder Include="AssetRents\Commands\" />
     <Folder Include="AssetRents\DTOs\" />
-    <Folder Include="AssetRentStatuses\CommandHandlers\" />
-    <Folder Include="AssetRentStatuses\Commands\" />
-    <Folder Include="AssetRentStatuses\DTOs\" />
     <Folder Include="VisitorManagements\CommandHandlers\" />
     <Folder Include="VisitorManagements\Commands\" />
     <Folder Include="VisitorManagements\DTOs\" />
